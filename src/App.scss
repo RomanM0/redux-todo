@@ -1,0 +1,76 @@
+@mixin mg-sides(){
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+// -- F O N T S --
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap');
+
+$ft-Mont: 'Montserrat', sans-serif;
+
+// -- F O N T S   E N D --
+body{
+    background-color: #2f2d2d;
+}
+.App {
+    text-align: center;
+  }
+.Btn{
+    margin-left: 20px;
+    width: 90px;
+    height: 27px;
+    color: #fff;
+    border: #fff solid 1.4px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.5s;
+    font-family: $ft-Mont;
+    font-weight: 500;
+}
+.addBtn{
+    background-color: #000;
+}
+.todoDelBtn{
+    background-color: red;
+}
+.pgTitle{
+    color: #fff;
+}
+.addBtn:hover{
+    background-color: rgb(0, 102, 255);
+    transition: 0.5s;
+    width: 95px;
+}
+.Btn:hover{
+    text-decoration: underline;
+}
+.todoElement{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.todoElName{
+    color: #fff;
+    font-size: 16pt;
+    font-family: $ft-Mont;
+    font-weight: 500;
+}
+.todoContent{
+    width: 300px;
+    height: 25px;
+    background-color: #000;
+    border: 1px solid #fff;
+    font-family: $ft-Mont;
+    font-weight: 500;
+    border-radius: 10px;
+    padding-left: 12px;
+    color: #fff;
+}
+.App {
+    li {
+      border: #fff solid 1px;
+      background-color: #000;
+      margin-top: 20px;
+      height: 45px;
+    }
+  }

@@ -18,22 +18,27 @@ function App() {
   const handleRemoveTask = (taskId) =>{
     dispatch(removeTask(taskId))
   }
+  document.addEventListener("contextmenu", (event) => {
+    event.preventDefault()
+  });
+
   return (
-    <div className="App">
-      <h1>Redux TODO List</h1>
+    <div className="App" onKeyDown={(e) => {if(e.keyCode === 13){handleAddTask()}}}>
+      <h1 className='pgTitle'>Redux TODO List</h1>
       <div>
         <input
-        type="text" 
+        type="text"
+        className='todoContent' 
         placeholder='Add new todo'
         value={newTask}
         onChange={(e)=>{ setNewTask(e.target.value) }} />
-         <button onClick={handleAddTask}>Add</button>
+         <button className='addBtn Btn' title='Left click to Add new todo, Right click to delete all todos' onClick={handleAddTask} onContextMenu={(e)=>{window.confirm('Are you sure you want delete all todos?')}}>➕ Add</button>
       </div>
       <ul>
         {tasks.map((task)=> (
-          <li key={task.id}>
-            {task.text}
-            <button onClick={()=>{ handleRemoveTask(task.id) }}>Remove</button>
+          <li className='todoElement' key={task.id}>
+            <p className='todoElName'>{task.text}</p>
+            <button className='todoDelBtn Btn' onClick={()=>{ handleRemoveTask(task.id) }}>🗑 Remove</button>
           </li>
         ))}
       </ul>
